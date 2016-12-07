@@ -1,0 +1,7 @@
+.vagrant/
+data/*
+err.log
+node_modules/
+npm*.log
+out.log
+*sublime*

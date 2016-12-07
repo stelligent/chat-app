@@ -1,0 +1,47 @@
+{
+  "name": "chat-app",
+  "description": "A real-time chat application",
+  "author": "Stelligent",
+  "version": "1.0.0",
+  "main": "src/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mince27/chat-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mince27/chat-app.git"
+  },
+  "scripts": {
+    "jshint": "jshint src/. test/. --config",
+    "build": "",
+    "debug": "node src/index.js",
+    "start": "forever start -a -o out.log -e err.log --minUptime 1000 --spinSleepTime 1000 src/index.js",
+    "stop": "forever stopall",
+    "clearDatabase": "./bin/clearDatabase"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
+    "feathers": "^2.0.0",
+    "feathers-authentication": "^0.7.0",
+    "feathers-configuration": "^0.4.1",
+    "feathers-errors": "^2.0.1",
+    "feathers-hooks": "^1.5.0",
+    "feathers-nedb": "^2.2.2",
+    "feathers-rest": "^1.2.4",
+    "feathers-socketio": "^1.3.3",
+    "forever": "^0.15.3",
+    "nedb": "^1.8.0",
+    "passport": "^0.3.2",
+    "pm2": "^2.1.5",
+    "serve-favicon": "^2.3.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.1",
+    "mocha": "^3.1.2",
+    "mustache": "^2.3.0",
+    "request": "^2.69.0"
+  }
+}

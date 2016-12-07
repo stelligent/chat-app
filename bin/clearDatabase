@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+const feathersConf = require('feathers-configuration');
+
+const buildConfig = feathersConf(path.join(__dirname, '..'));
+const config = buildConfig();
+
+console.info('Removing database files from %s', config.nedb);
+fs.readdir(config.nedb, (readDirErr, files) => {
+  if (readDirErr) {
+    console.error(readDirErr);
+    throw new Error(`Error occurred reading ${config.nedb}`);
+  }
+
+  let count = 1;
+  files.forEach((file) => {
+    console.info('- Removing %d of %d: %s', count, files.length, file);
+    fs.unlinkSync(`${config.nedb}/${file}`);
+    count += 1;
+  });
+});

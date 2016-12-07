@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <title>Stelligent Chat</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/chat.css">
+  </head>
+  <body>
+    <div id="app" class="flex flex-column">
+      <header class="title-bar flex flex-row flex-center">
+        <div class="title-wrapper block center-element">
+          <img class="logo" src="/stelligent_logo_bw.png" alt="Stelligent Chat">
+        </div>
+      </header>
+
+      <div class="flex flex-row flex-1 clear">
+        <aside class="sidebar col col-4 flex flex-column flex-space-between">
+          <header class="flex flex-row flex-center">
+            <h4 class="font-300 text-center">
+              <span class="font-600 online-count">0</span> users
+            </h4>
+          </header>
+
+          <ul class="flex flex-column flex-1 list-unstyled user-list"></ul>
+          <footer class="flex flex-row flex-center">
+            <a href="#" class="logout button button-primary">
+              Sign Out
+            </a>
+          </footer>
+        </aside>
+
+        <div class="flex flex-column col col-9">
+          <main class="chat flex flex-column flex-1 clear"></main>
+
+          <form class="flex flex-row flex-space-between" id="send-message">
+            <input type="text" name="text" class="flex flex-1">
+            <button class="button-primary" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../js/vendor/browser.min.js"></script>
+    <script src="../js/vendor/moment.min.js"></script>
+    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="../js/vendor/core.min.js"></script>
+    <script src="../js/vendor/feathers.js"></script>
+    <script src="../js/vendor/socket.io.min.js"></script>
+    <script type="text/babel" src="app.js"></script>
+  </body>
+</html>
