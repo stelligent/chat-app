@@ -2,7 +2,7 @@
   "name": "chat-app",
   "description": "A real-time chat application",
   "author": "Stelligent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/",
   "license": "MIT",
   "repository": {

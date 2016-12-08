@@ -18,17 +18,13 @@ module.exports = function(app) {
       console.error('Username [%s] is invalid', body.email);
       res.redirect('/index.html');
     } else {
-      console.info('Registering [%s]', body.email);
-      // Get the user service and `create` a new user
       app.service('users').create({
         email: body.email,
         password: body.password
       })
-      // Then redirect to the home page
       .then((user) => {
-        res.redirect('/index.html');
+        res.redirect('/login.html');
       })
-      // On errors, just call our error middleware
       .catch(next);
     }
   };
